@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  express_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.express
+    ports:
+      - "3000:3000"
+
+  django_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.django
+    ports:
+      - "8000:8000"

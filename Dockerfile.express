@@ -13,7 +13,7 @@ COPY userapi/user.js .
 RUN npm install
 
 # Expone el puerto
-EXPOSE 3002
+EXPOSE 3005
 
 # Comando para iniciar la aplicación
 CMD ["node", "user.js"]

@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const app = express();
 const nodemailer = require('nodemailer');
 const sqlite3 = require('sqlite3');
@@ -10,6 +11,7 @@ const sqlite3 = require('sqlite3');
 // Configuración de la base de datos SQLite3
 const db = new sqlite3.Database('userinfo.db');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -142,6 +144,6 @@ app.post('/forgot-password', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('Servidor Express escuchando en el puerto 3000');
+app.listen(3002, () => {
+  console.log('Servidor Express escuchando en el puerto 3002');
 });

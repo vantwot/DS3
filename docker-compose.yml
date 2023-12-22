@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.express
     ports:
-      - "3000:3000"
+      - "3002:3002"
 
   django_app:
     build:
